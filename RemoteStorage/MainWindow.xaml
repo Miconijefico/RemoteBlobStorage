@@ -1,0 +1,97 @@
+﻿<Window x:Class="RemoteStorage.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RemoteStorage"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="{StaticResource GradientBackground}">
+        <ListBox
+            x:Name="lbItems"
+            DisplayMemberPath="Name"
+            SelectionChanged="LbItems_SelectionChanged"
+            Height="200" Margin="27,117,506,117"
+            />
+        <Label
+            Content="Choose directory"
+               HorizontalAlignment="Left"
+               Margin="54,49,0,0" 
+               VerticalAlignment="Top"/>
+        <ComboBox 
+            x:Name="cbDirectories"
+            IsEditable="True"
+            KeyDown="CbDirectories_KeyDown"
+            TextBoxBase.TextChanged="CbDirectories_TextChanged"
+            HorizontalAlignment="Left" 
+            Margin="183,51,0,0" 
+            VerticalAlignment="Top"
+            Width="120"/>
+        <Button 
+            x:Name="btnUpload"
+            Click="BtnUpload_Click"
+            Background="Black"
+            Content="Upload"
+                HorizontalAlignment="Left"
+                Margin="73,367,0,0"
+                VerticalAlignment="Top" Height="33" Width="81"/>
+        <Button 
+    x:Name="btnDownload"
+    Click="BtnDownload_Click"
+    Background="DarkMagenta"
+    Content="Download"
+        HorizontalAlignment="Left"
+        Margin="222,367,0,0"
+        VerticalAlignment="Top" Height="33" Width="81"/>
+        <Button 
+    x:Name="btnDelete"
+    Click="BtnDelete_Click"
+    Background="Red"
+    Content="Delete"
+        HorizontalAlignment="Left"
+        Margin="644,362,0,0"
+        VerticalAlignment="Top" Height="33" Width="81"/>
+        <Label Content="Content type:" HorizontalAlignment="Left" Margin="299,117,0,0" VerticalAlignment="Top" Height="30" Width="96"/>
+        <TextBox
+            Text="{Binding Properties.ContentType, Mode=OneWay}"
+            HorizontalAlignment="Left" 
+                 Margin="400,123,0,0" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Top" 
+                 Width="195" Height="24"/>
+        <Label Content="Content size:" HorizontalAlignment="Left" Margin="299,217,0,0" VerticalAlignment="Top" Height="30" Width="96"/>
+        <TextBox
+            Text="{Binding Properties.ContentLenght, Mode=OneWay}"
+            HorizontalAlignment="Left" 
+                 Margin="400,223,0,0" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Top" 
+                 Width="195" Height="24"/>
+        <Label Content="Date created:" HorizontalAlignment="Left" Margin="299,167,0,0" VerticalAlignment="Top" Height="30" Width="96"/>
+        <TextBox
+            Text="{Binding Properties.CreatedOn, Mode=OneWay}"
+            HorizontalAlignment="Left" 
+                 Margin="400,173,0,0" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Top" 
+                 Width="195" Height="24"/>
+        <Label Content="Last modified:" HorizontalAlignment="Left" Margin="299,271,0,0" VerticalAlignment="Top" Height="30" Width="96"/>
+        <TextBox
+            Text="{Binding Properties.LastModified, Mode=OneWay}"
+            HorizontalAlignment="Left" 
+                 Margin="400,277,0,0" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Top" 
+                 Width="195" Height="24"/>
+        <Label Content="Server encrypted:" HorizontalAlignment="Left" Margin="299,325,0,0" VerticalAlignment="Top" Height="30" Width="96"/>
+        <TextBox
+            Text="{Binding Properties.ServerEncrypted, Mode=OneWay}"
+            HorizontalAlignment="Left" 
+                 Margin="400,331,0,0" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Top" 
+                 Width="195" Height="24"/>
+    </Grid>
+
+</Window>
